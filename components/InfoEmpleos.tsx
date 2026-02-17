@@ -28,8 +28,9 @@ export default function InfoEmpleos({ empleo, candidato }: InfoEmpleosProps) {
 				uuid: candidato.uuid,
 				jobId: empleo.id,
 				candidateId: candidato.candidateId,
+				applicationId: candidato.applicationId,
 				repoUrl: repoUrl.trim(),
-			});
+			});      
 
 			if (result?.ok === true) {
 				setSuccess(true);
