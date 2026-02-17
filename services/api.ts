@@ -88,6 +88,8 @@ export async function enviarPostulacion(
 			parsedError = null;
 		}
 
+    // estructurar respuesta de error del backend para logging y saber
+    // que valores espera recibir el backend que no esta recibiendo.
 		const backendMessage =
 			parsedError?.message || parsedError?.error || rawError || "Sin detalle";
 
@@ -98,6 +100,8 @@ export async function enviarPostulacion(
 			rawError,
 			requestBody,
 		});
+
+    //applicationId
 
 		throw new Error(
 			`Error al enviar postulación: ${backendMessage}`,
